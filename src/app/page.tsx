@@ -7,6 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
 import profilePic from "@/assets/1_picture.jpeg"; // Importação direta
 import aboutMePic from "@/assets/2_picture.jpeg"; // Importação direta
+
 export default function Home() {
   const [language, setLanguage] = useState("EN");
 
@@ -17,8 +18,8 @@ export default function Home() {
         <div className="code-background"></div>
       </div>
 
-      {/* Barra lateral */}
-      <aside className="w-20 flex flex-col items-center py-8 bg-gray-800 fixed left-0 top-0 h-full z-10">
+      {/* Barra lateral (oculta em dispositivos móveis) */}
+      <aside className="hidden md:flex w-20 flex-col items-center py-8 bg-gray-800 fixed left-0 top-0 h-full z-10">
         <Link
           href="https://linkedin.com"
           target="_blank"
@@ -57,13 +58,13 @@ export default function Home() {
       </aside>
 
       {/* Conteúdo principal */}
-      <div className="flex-1 flex flex-col items-center p-6 ml-20 w-full relative z-10">
+      <div className="flex-1 flex flex-col items-center p-6 md:ml-20 w-full relative z-10">
         {/* Cabeçalho */}
-        <header className="w-full flex justify-between items-center p-6 max-w-6xl border-b border-gray-700">
-          <h1 className="text-lg font-bold text-gray-300 font-mono">
+        <header className="w-full flex flex-col md:flex-row justify-between items-center p-6 max-w-6xl border-b border-gray-700">
+          <h1 className="text-lg font-bold text-gray-300 font-mono mb-4 md:mb-0">
             Matheus de Paulo Oliveira
           </h1>
-          <nav className="flex gap-6 items-center">
+          <nav className="flex flex-wrap gap-4 items-center">
             <Link
               href="#home"
               className="text-md text-gray-400 hover:text-blue-400 transition font-mono"
@@ -117,9 +118,9 @@ export default function Home() {
         </header>
 
         {/* Apresentação */}
-        <section className="flex justify-between items-center w-full max-w-6xl mt-20">
-          <div className="text-left max-w-lg">
-            <h2 className="text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+        <section className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20">
+          <div className="text-left max-w-lg mb-8 md:mb-0">
+            <h2 className="text-4xl md:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
               Matheus is a Java <br /> Back-End Developer
             </h2>
             <p className="text-lg text-gray-400 mt-6 font-mono">
@@ -134,12 +135,12 @@ export default function Home() {
             </Link>
           </div>
           <div className="text-center flex flex-col items-center">
-            <div className="w-1025 h-1025 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400">
+            <div className="w-64 h-64 md:w-1025 md:h-1025 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400">
               <Image
-                src={profilePic} // Agora funciona com next/image
+                src={profilePic}
                 alt="Your Photo"
-                width={365}
-                height={365}
+                width={256}
+                height={256}
                 className="rounded-full object-cover"
               />
             </div>
@@ -163,176 +164,30 @@ export default function Home() {
           <h3 className="text-3xl font-bold text-gray-300 font-mono">
             Projects
           </h3>
-          <div className="overflow-x-scroll mt-6 p-4">
-            <div className="flex space-x-6">
-              {/* Project 1 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
+          <div className="flex overflow-x-scroll space-x-8 mt-6 p-4">
+            {/* Projetos */}
+            {Array.from({ length: 8 }).map((_, index) => (
+              <div
+                key={index}
+                className="min-w-[12rem] bg-gray-800 rounded-lg p-6 flex-shrink-0"
+              >
                 <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  SysXL
+                  Project {index + 1}
                 </h4>
                 <p className="text-gray-400 mt-4 font-mono">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                   eget felis eget tortor ultrices.
                 </p>
                 <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
+                  <Link
+                    href="#"
+                    className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                  >
+                    Read more
+                  </Link>
                 </div>
               </div>
-
-              {/* Project 2 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  RDL01 - Rename File
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 3 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  FitTrack
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 4 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  ReadDocsAPI
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 5 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  Autoinstall LinuxFlatpak
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 6 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  SeniorFX
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 7 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  SimpleCRUD
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 8 */}
-              <div className="min-w-[20rem] sm:min-w-[24rem] md:min-w-[20rem] lg:min-w-[24rem] bg-gray-800 rounded-lg p-4">
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  Marcelao Homework
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <div className="flex flex-wrap gap-4 justify-start">
-                    <Link
-                      href="#"
-                      className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                    >
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -340,6 +195,7 @@ export default function Home() {
         <section className="mt-16 max-w-6xl w-full">
           <h3 className="text-3xl font-bold text-gray-300 font-mono">Skills</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 mt-6">
+            {/* Skills */}
             <div className="bg-gray-800 rounded-lg p-4">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 Programming Languages
@@ -364,7 +220,6 @@ export default function Home() {
                 MySQL, PostgreSQL, MongoDB
               </p>
             </div>
-
             <div className="bg-gray-800 rounded-lg p-4">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 Devops & Infra
@@ -373,7 +228,6 @@ export default function Home() {
                 Linux, Docker, RabbitMQ, AWS
               </p>
             </div>
-
             <div className="bg-gray-800 rounded-lg p-4">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 Languages
@@ -388,17 +242,16 @@ export default function Home() {
         </section>
 
         {/* About me */}
-        <section className="flex justify-between items-center w-full max-w-6xl mt-20">
-          <div className="w-3620 h-3620 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400">
+        <section className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20">
+          <div className="w-64 h-64 md:w-3620 md:h-3620 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400 mb-8 md:mb-0">
             <Image
               src={aboutMePic}
               alt="Your Photo"
-              width={365} // Ajuste para o mesmo valor do height
-              height={365} // Ajuste para o mesmo valor do width
+              width={256}
+              height={256}
               className="rounded-full object-cover"
             />
           </div>
-
           <div className="text-right max-w-lg">
             <h3 className="text-3xl font-bold text-gray-300 font-mono">
               About me
@@ -407,15 +260,7 @@ export default function Home() {
               Hello, I am Matheus de Paulo Oliveira!
             </p>
             <p className="text-lg text-gray-400 mt-6 font-mono">
-              I am a Brazilian backend developer based in São Paulo, Brazil. I
-              develop backend solutions using RESTful APIs, Microsservices, RPA,
-              and Desktop applications with JavaFX.
-            </p>
-            <p className="text-lg text-gray-400 mt-6 font-mono">
-              I am a lifelong learner, passionate about studying, learning, and
-              staying updated with new technologies to apply them in my
-              projects. I also enjoy watching and playing football, as well as
-              practicing other sports like volleyball or basketball.
+              I am a Brazilian backend developer based in São Paulo, Brazil.
             </p>
             <Link
               href="#contact"
@@ -426,65 +271,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Certifications */}
-        <section id="projects" className="mt-16 max-w-6xl w-full">
+        <section id="certifications" className="mt-16 max-w-6xl w-full">
           <h3 className="text-3xl font-bold text-gray-300 font-mono">
             Certifications
           </h3>
-          <div className="flex overflow-x-scroll space-x-6 mt-6 p-4">
-            <div className="w-96 bg-gray-800 rounded-lg p-4">
-              <h4 className="text-xl font-bold text-gray-300 font-mono">
-                LPI - Linux Essentials
-              </h4>
-              <p className="text-gray-400 mt-4 font-mono">
-                Still studying for the Linux Essentials certification.
-              </p>
-              <p className="text-gray-400 mt-4 font-mono">
-                Preparing for the exam.
-              </p>
-              <p className="text-gray-400 mt-4 font-mono">
-                Expected to be certified by the end of 2025.
-              </p>
-            </div>
-
-            <div className="w-96 bg-gray-800 rounded-lg p-4">
-              <h4 className="text-xl font-bold text-gray-300 font-mono">
-                TOEFL
-              </h4>
-              <p className="text-gray-400 mt-4 font-mono">
-                Still planning to take the exam.
-              </p>
-              <p className="text-gray-400 mt-4 font-mono">
-                Expected to be certified by the end of 2027.
-              </p>
-            </div>
-
-            <div className="w-96 bg-gray-800 rounded-lg p-4">
-              <h4 className="text-xl font-bold text-gray-300 font-mono">
-                Oracle Certified Associate, Java SE 17 Programmer (OCAJP)
-              </h4>
-              <p className="text-gray-400 mt-4 font-mono">
-                Still planning to take the exam.
-              </p>
-              <p className="text-gray-400 mt-4 font-mono">
-                Expected to be certified by the end of 2026.
-              </p>
-            </div>
+          <div className="flex overflow-x-scroll space-x-8 mt-6 p-4">
+            {/* Certificações */}
+            {Array.from({ length: 3 }).map((_, index) => (
+              <div
+                key={index}
+                className="min-w-[24rem] bg-gray-800 rounded-lg p-6 flex-shrink-0"
+              >
+                <h4 className="text-xl font-bold text-gray-300 font-mono">
+                  Certification {index + 1}
+                </h4>
+                <p className="text-gray-400 mt-4 font-mono">
+                  Details about the certification.
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Contact */}
-        <section className="flex justify-between items-center w-full max-w-6xl mt-20 mb-20">
-          <div className="text-right max-w-lg">
+        <section className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20 mb-20">
+          <div className="text-right max-w-lg mb-8 md:mb-0">
             <h3 className="text-3xl font-bold text-gray-300 font-mono">
               Contact me
             </h3>
             <p className="text-lg text-gray-400 mt-6 font-mono">
               I am interested in freelance opportunities. However, if you have
-              other request or question, do not hesitate to contact me
+              other request or question, do not hesitate to contact me.
             </p>
           </div>
-
           <Link
             href="#contact"
             className="mt-8 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -495,7 +314,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="w-full bg-gray-900 border-t border-gray-700 py-6 text-center relative z-10">
-          <p className="text-gray-400 text-sm font-mono">
+          <p className="text-gray-400 text-sm font-mono px-4">
             Copyright © {new Date().getFullYear()} Made by matheusdpo
           </p>
         </footer>
