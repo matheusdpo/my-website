@@ -4,13 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
+import Image from "next/image";
+import profilePic from "@/assets/1_picture.jpeg"; // Importação direta
+import aboutMePic from "@/assets/2_picture.jpeg"; // Importação direta
 export default function Home() {
   const [language, setLanguage] = useState("EN");
-
-  const toggleLanguage = () => {
-    setLanguage(language === "EN" ? "PT" : language === "PT" ? "GE" : "EN");
-  };
 
   return (
     <main className="flex min-h-screen bg-gray-900 text-white relative overflow-hidden">
@@ -136,8 +134,14 @@ export default function Home() {
             </Link>
           </div>
           <div className="text-center flex flex-col items-center">
-            <div className="w-40 h-40 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400">
-              [Your Photo]
+            <div className="w-1025 h-1025 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400">
+              <Image
+                src={profilePic} // Agora funciona com next/image
+                alt="Your Photo"
+                width={365}
+                height={365}
+                className="rounded-full object-cover"
+              />
             </div>
             <p className="mt-6 text-gray-300 text-lg font-mono">
               Currently working on{" "}
@@ -338,7 +342,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 mt-6">
             <div className="bg-gray-800 rounded-lg p-4">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
-                Languages
+                Programming Languages
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
                 Java, Python, JavaScript, ShellScript
@@ -360,6 +364,7 @@ export default function Home() {
                 MySQL, PostgreSQL, MongoDB
               </p>
             </div>
+
             <div className="bg-gray-800 rounded-lg p-4">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 Devops & Infra
@@ -368,16 +373,32 @@ export default function Home() {
                 Linux, Docker, RabbitMQ, AWS
               </p>
             </div>
+
+            <div className="bg-gray-800 rounded-lg p-4">
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                Languages
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Portuguese (Native)
+              </p>
+              <p className="text-gray-400 mt-4 font-mono">English (B2)</p>
+              <p className="text-gray-400 mt-4 font-mono">Georgian (A1)</p>
+            </div>
           </div>
         </section>
 
         {/* About me */}
         <section className="flex justify-between items-center w-full max-w-6xl mt-20">
-          <div className="text-center flex flex-col items-center">
-            <div className="w-40 h-40 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-purple-400">
-              [Your Photo]
-            </div>
+          <div className="w-3620 h-3620 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400">
+            <Image
+              src={aboutMePic}
+              alt="Your Photo"
+              width={365} // Ajuste para o mesmo valor do height
+              height={365} // Ajuste para o mesmo valor do width
+              className="rounded-full object-cover"
+            />
           </div>
+
           <div className="text-right max-w-lg">
             <h3 className="text-3xl font-bold text-gray-300 font-mono">
               About me
@@ -422,9 +443,22 @@ export default function Home() {
                 Preparing for the exam.
               </p>
               <p className="text-gray-400 mt-4 font-mono">
-                Expected to be certified by the end of 2021.
+                Expected to be certified by the end of 2025.
               </p>
             </div>
+
+            <div className="w-96 bg-gray-800 rounded-lg p-4">
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                TOEFL
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Still planning to take the exam.
+              </p>
+              <p className="text-gray-400 mt-4 font-mono">
+                Expected to be certified by the end of 2027.
+              </p>
+            </div>
+
             <div className="w-96 bg-gray-800 rounded-lg p-4">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 Oracle Certified Associate, Java SE 17 Programmer (OCAJP)
