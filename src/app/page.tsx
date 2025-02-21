@@ -173,11 +173,10 @@ export default function Home() {
           <h3 className="text-3xl font-bold text-gray-300 font-mono">
             Projects
           </h3>
-          <div className="flex overflow-x-scroll space-x-8 mt-6 p-">
+          <div className="flex overflow-x-scroll space-x-8 mt-6 p-4">
             {/* Projetos inseridos manualmente */}
             {/* 1 */}
-            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
-              {" "}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0 flex flex-col">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 SysXL
               </h4>
@@ -197,7 +196,7 @@ export default function Home() {
                   Sociedade Extrativa Dolomia Ltda ®
                 </a>
               </p>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
                   href="#"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -208,8 +207,7 @@ export default function Home() {
             </div>
 
             {/* 2 */}
-            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
-              {" "}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0 flex flex-col">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 API Read Docs OCR
               </h4>
@@ -218,7 +216,7 @@ export default function Home() {
                 documentos PDF ou imagens via OCR e retornar em JSON. <br></br>
                 Paises suportados: Brasil, EUA, Canada e Georgia.
               </p>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
                   href="#"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -229,8 +227,7 @@ export default function Home() {
             </div>
 
             {/* 3 */}
-            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
-              {" "}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0 flex flex-col">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 RDL01 - Rename Files
               </h4>
@@ -240,7 +237,7 @@ export default function Home() {
                 renomear arquivos com o numero da nota fiscal e mover para um
                 diretorio.
               </p>
-              <p className="text-gray-400 mt-4 font-mono">
+              <p className="text-gray-400 mt- font-mono">
                 Software feito para:<br></br>{" "}
                 <a
                   href="http://www.dolomia.com.br"
@@ -251,7 +248,7 @@ export default function Home() {
                   Sociedade Extrativa Dolomia Ltda ®
                 </a>
               </p>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
                   href="#"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -262,8 +259,7 @@ export default function Home() {
             </div>
 
             {/* 4 */}
-            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
-              {" "}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0 flex flex-col">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 CertiFlow
               </h4>
@@ -272,7 +268,7 @@ export default function Home() {
                 da fila do RabbitMQ e enviar para o RPA de emissao de
                 certificados de DCPOA e SIGSIF.
               </p>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
                   href="#"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -291,8 +287,7 @@ export default function Home() {
             </div>
 
             {/* 5 */}
-            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
-              {" "}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0 flex flex-col">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 FitTrack
               </h4>
@@ -300,7 +295,7 @@ export default function Home() {
                 Aplicativo mobile feito em React Native para rastrear atividades
                 fisicas na academia.
               </p>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
                   href="#"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -318,8 +313,7 @@ export default function Home() {
             </div>
 
             {/* 6 */}
-            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
-              {" "}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0 flex flex-col">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 Autoinstall Linux
               </h4>
@@ -327,7 +321,7 @@ export default function Home() {
                 Script em shell para instalar automaticamente softwares no
                 Linux.
               </p>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
                   href="#"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -345,15 +339,14 @@ export default function Home() {
             </div>
 
             {/* 7 */}
-            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
-              {" "}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0 flex flex-col">
               <h4 className="text-xl font-bold text-gray-300 font-mono">
                 API Convert Currencies
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
                 API feita em Java e Spring Boot para converter moedas.
               </p>
-              <div className="mt-6 flex space-x-4">
+              <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
                   href="#"
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
@@ -423,7 +416,10 @@ export default function Home() {
         </section>
 
         {/* About me */}
-        <section id="about-me" className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20">
+        <section
+          id="about-me"
+          className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20"
+        >
           <div className="w-64 h-64 md:w-3620 md:h-3620 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400 mb-8 md:mb-0">
             <Image
               src={aboutMePic}
@@ -502,7 +498,10 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20 mb-20">
+        <section
+          id="contact"
+          className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20 mb-20"
+        >
           <div className="text-right max-w-lg mb-8 md:mb-0">
             <h3 className="text-3xl font-bold text-gray-300 font-mono">
               Contact me
@@ -527,7 +526,9 @@ export default function Home() {
             Copyright © {new Date().getFullYear()} Made by matheusdpo
           </p>
 
-          <p className="text-gray-400 text-sm font-mono px-4">Version SNAPSHOT-1.0.0</p>
+          <p className="text-gray-400 text-sm font-mono px-4">
+            Version SNAPSHOT-1.0.0
+          </p>
         </footer>
       </div>
     </main>
