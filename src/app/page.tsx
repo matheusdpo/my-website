@@ -5,51 +5,50 @@ import { useState } from "react";
 import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Image from "next/image";
-import profilePic from "@/assets/1_picture.jpeg"; // Importação direta
-import aboutMePic from "@/assets/2_picture.jpeg"; // Importação direta
+import profilePic from "@/assets/1_picture.jpeg";
+import aboutMePic from "@/assets/2_picture.jpeg";
 
 export default function Home() {
   const [language, setLanguage] = useState("EN");
 
   return (
     <main className="flex min-h-screen bg-gray-900 text-white relative overflow-hidden">
-      {/* Background com efeito de código */}
       <div className="absolute inset-0 z-0">
         <div className="code-background"></div>
       </div>
 
-      {/* Barra lateral (oculta em dispositivos móveis) */}
+      {/* aside */}
       <aside className="hidden md:flex w-20 flex-col items-center py-8 bg-gray-800 fixed left-0 top-0 h-full z-10">
         <Link
-          href="https://linkedin.com"
+          href="https://linkedin.com/in/matheus-de-paulo-oliveira"
           target="_blank"
           className="mb-6 text-gray-400 hover:text-blue-400 transition"
         >
           <FaLinkedin size={28} />
         </Link>
         <Link
-          href="https://github.com"
+          href="https://github.com/matheusdpo"
           target="_blank"
           className="text-gray-400 hover:text-purple-400 transition"
         >
           <FaGithub size={28} />
         </Link>
         <Link
-          href="http://www.instagram.com"
+          href="http://www.instagram.com/_matheusdpo"
           target="_blank"
           className="mt-6 text-gray-400 hover:text-pink-400 transition"
         >
           <FaInstagram size={28} />
         </Link>
         <Link
-          href="http://www.x.com"
+          href="http://www.x.com/_matheusdpo"
           target="_blank"
           className="mt-6 text-gray-400 hover:text-blue-400 transition"
         >
           <FaXTwitter size={28} />
         </Link>
         <Link
-          href="http://www.discord.com"
+          href="discord://-/users/285224406077407232"
           target="_blank"
           className="mt-6 text-gray-400 hover:text-indigo-400 transition"
         >
@@ -57,19 +56,18 @@ export default function Home() {
         </Link>
       </aside>
 
-      {/* Conteúdo principal */}
+      {/* header */}
       <div className="flex-1 flex flex-col items-center p-6 md:ml-20 w-full relative z-10">
-        {/* Cabeçalho */}
         <header className="w-full flex flex-col md:flex-row justify-between items-center p-6 max-w-6xl border-b border-gray-700">
           <h1 className="text-lg font-bold text-gray-300 font-mono mb-4 md:mb-0">
             Matheus de Paulo Oliveira
           </h1>
           <nav className="flex flex-wrap gap-4 items-center">
             <Link
-              href="#home"
+              href="#init"
               className="text-md text-gray-400 hover:text-blue-400 transition font-mono"
             >
-              #home
+              #init
             </Link>
             <Link
               href="#projects"
@@ -78,16 +76,22 @@ export default function Home() {
               #projects
             </Link>
             <Link
-              href="#works"
+              href="#skills"
               className="text-md text-gray-400 hover:text-green-400 transition font-mono"
             >
-              #works
+              #skills
             </Link>
             <Link
-              href="#about"
+              href="#about-me"
               className="text-md text-gray-400 hover:text-pink-400 transition font-mono"
             >
-              #about me
+              #about_me
+            </Link>
+            <Link
+              href="#certifications"
+              className="text-md text-gray-400 hover:text-indigo-400 transition font-mono"
+            >
+              #certifications
             </Link>
             <Link
               href="#contact"
@@ -117,7 +121,7 @@ export default function Home() {
           </nav>
         </header>
 
-        {/* Apresentação */}
+        {/* introduction */}
         <section className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20">
           <div className="text-left max-w-lg mb-8 md:mb-0">
             <h2 className="text-4xl md:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
@@ -138,7 +142,7 @@ export default function Home() {
             <div className="w-64 h-64 md:w-1025 md:h-1025 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400">
               <Image
                 src={profilePic}
-                alt="Your Photo"
+                alt="casamento_julha_davi"
                 width={256}
                 height={256}
                 className="rounded-full object-cover"
@@ -146,12 +150,17 @@ export default function Home() {
             </div>
             <p className="mt-6 text-gray-300 text-lg font-mono">
               Currently working on{" "}
-              <span className="text-blue-400">Yank! Solutions</span>
+              <a
+                href="http://www.yanksolutions.com.br"
+                className="text-blue-400"
+              >
+                Yank! Solutions
+              </a>
             </p>
           </div>
         </section>
 
-        {/* Frase destaque */}
+        {/* Text */}
         <section className="mt-20 text-center text-2xl font-semibold text-gray-400 border-t border-gray-700 pt-8">
           <p className="font-mono">
             &quot;By failing to prepare, you’re preparing to fail&quot;
@@ -164,35 +173,207 @@ export default function Home() {
           <h3 className="text-3xl font-bold text-gray-300 font-mono">
             Projects
           </h3>
-          <div className="flex overflow-x-scroll space-x-8 mt-6 p-4">
-            {/* Projetos */}
-            {Array.from({ length: 8 }).map((_, index) => (
-              <div
-                key={index}
-                className="min-w-[12rem] bg-gray-800 rounded-lg p-6 flex-shrink-0"
-              >
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  Project {index + 1}
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  eget felis eget tortor ultrices.
-                </p>
-                <div className="mt-6">
-                  <Link
-                    href="#"
-                    className="disabled opacity-50 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
-                  >
-                    Read more
-                  </Link>
-                </div>
+          <div className="flex overflow-x-scroll space-x-8 mt-6 p-">
+            {/* Projetos inseridos manualmente */}
+            {/* 1 */}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                SysXL
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Sistema feito em Java e JavaFX para capturar informacoes do
+                banco de dados via JDBC e retornar em excel utilizando Apache
+                POI.
+              </p>
+              <p className="text-gray-400 mt-4 font-mono">
+                Software feito para:<br></br>{" "}
+                <a
+                  href="http://www.dolomia.com.br"
+                  target="_blank"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-300"
+                >
+                  {" "}
+                  Sociedade Extrativa Dolomia Ltda ®
+                </a>
+              </p>
+              <div className="mt-6 flex space-x-4">
+                <Link
+                  href="#"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  Read more
+                </Link>
               </div>
-            ))}
+            </div>
+
+            {/* 2 */}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                API Read Docs OCR
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Sistema feito em Java e Spring Boot para capturar informacoes de
+                documentos PDF ou imagens via OCR e retornar em JSON. <br></br>
+                Paises suportados: Brasil, EUA, Canada e Georgia.
+              </p>
+              <div className="mt-6 flex space-x-4">
+                <Link
+                  href="#"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  Developing...
+                </Link>
+              </div>
+            </div>
+
+            {/* 3 */}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                RDL01 - Rename Files
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Software de Automacao feito em Java e Spring Boot para capturar
+                numero da nota fiscal de um documento, utilizando REGEX,
+                renomear arquivos com o numero da nota fiscal e mover para um
+                diretorio.
+              </p>
+              <p className="text-gray-400 mt-4 font-mono">
+                Software feito para:<br></br>{" "}
+                <a
+                  href="http://www.dolomia.com.br"
+                  target="_blank"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-300"
+                >
+                  {" "}
+                  Sociedade Extrativa Dolomia Ltda ®
+                </a>
+              </p>
+              <div className="mt-6 flex space-x-4">
+                <Link
+                  href="#"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  Read more
+                </Link>
+              </div>
+            </div>
+
+            {/* 4 */}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                CertiFlow
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Microsservico feito em Java e Spring Boot para capturar demandas
+                da fila do RabbitMQ e enviar para o RPA de emissao de
+                certificados de DCPOA e SIGSIF.
+              </p>
+              <div className="mt-6 flex space-x-4">
+                <Link
+                  href="#"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  Developing...
+                </Link>
+
+                <Link
+                  href="https://github.com/matheusdpo/projeto-frigorifico-rabbitmq"
+                  target="_blank"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  GitHub
+                </Link>
+              </div>
+            </div>
+
+            {/* 5 */}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                FitTrack
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Aplicativo mobile feito em React Native para rastrear atividades
+                fisicas na academia.
+              </p>
+              <div className="mt-6 flex space-x-4">
+                <Link
+                  href="#"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  Read more
+                </Link>
+                <Link
+                  href="https://github.com/matheusdpo/gym-app"
+                  target="_blank"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  GitHub
+                </Link>
+              </div>
+            </div>
+
+            {/* 6 */}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                Autoinstall Linux
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                Script em shell para instalar automaticamente softwares no
+                Linux.
+              </p>
+              <div className="mt-6 flex space-x-4">
+                <Link
+                  href="#"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  Read more
+                </Link>
+                <Link
+                  href="https://github.com/matheusdpo/auto-install-flatpak-linux"
+                  target="_blank"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  GitHub
+                </Link>
+              </div>
+            </div>
+
+            {/* 7 */}
+            <div className="w-96 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                API Convert Currencies
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                API feita em Java e Spring Boot para converter moedas.
+              </p>
+              <div className="mt-6 flex space-x-4">
+                <Link
+                  href="#"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  Read more
+                </Link>
+                <Link
+                  href="https://github.com/matheusdpo/api-convert-currencies"
+                  target="_blank"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
+                >
+                  GitHub
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Skills */}
-        <section className="mt-16 max-w-6xl w-full">
+        <section id="skills" className="mt-16 max-w-6xl w-full">
           <h3 className="text-3xl font-bold text-gray-300 font-mono">Skills</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 mt-6">
             {/* Skills */}
@@ -242,7 +423,7 @@ export default function Home() {
         </section>
 
         {/* About me */}
-        <section className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20">
+        <section id="about-me" className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20">
           <div className="w-64 h-64 md:w-3620 md:h-3620 bg-gray-700 rounded-full flex items-center justify-center text-xl border-4 border-blue-400 mb-8 md:mb-0">
             <Image
               src={aboutMePic}
@@ -257,13 +438,14 @@ export default function Home() {
               About me
             </h3>
             <p className="text-lg text-gray-400 mt-6 font-mono">
-              Hello, I am Matheus de Paulo Oliveira!
-            </p>
-            <p className="text-lg text-gray-400 mt-6 font-mono">
-              I am a Brazilian backend developer based in São Paulo, Brazil.
+              Hello, I am Matheus de Paulo Oliveira, 24 y/o!
+              <br />I am a Brazilian based in São Paulo, Brazil. I am a Java
+              Back-End Developer with +4 years of experience in the field. I am
+              passionate about technology and programming, and I am always
+              looking for new challenges and opportunities to learn and grow.
             </p>
             <Link
-              href="#contact"
+              href="#"
               className="mt-8 inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg text-lg hover:from-blue-600 hover:to-purple-600 transition font-mono"
             >
               Read more
@@ -271,37 +453,64 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Certifications */}
         <section id="certifications" className="mt-16 max-w-6xl w-full">
           <h3 className="text-3xl font-bold text-gray-300 font-mono">
             Certifications
           </h3>
           <div className="flex overflow-x-scroll space-x-8 mt-6 p-4">
-            {/* Certificações */}
-            {Array.from({ length: 3 }).map((_, index) => (
-              <div
-                key={index}
-                className="min-w-[24rem] bg-gray-800 rounded-lg p-6 flex-shrink-0"
-              >
-                <h4 className="text-xl font-bold text-gray-300 font-mono">
-                  Certification {index + 1}
-                </h4>
-                <p className="text-gray-400 mt-4 font-mono">
-                  Details about the certification.
-                </p>
-              </div>
-            ))}
+            {/* Certifications - 1*/}
+            <div className="w-72 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                LPI - Linux Essentials
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                I am still studying for the Linux Essentials certification.
+              </p>
+              <p className="text-gray-400 mt-4 font-mono">
+                Planned to take the exam in the end of 2025.
+              </p>
+            </div>
+
+            {/* Certifications - 2*/}
+            <div className="w-72 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                Oracle Certified Associate, Java SE 17 Programmer (OCAJP)
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                I am planning to take the exam in the end of 2026.
+              </p>
+            </div>
+
+            {/* Certifications - 3*/}
+            <div className="w-72 bg-gray-800 rounded-lg p-6 flex-shrink-0">
+              {" "}
+              {/* Largura fixa de 18rem */}
+              <h4 className="text-xl font-bold text-gray-300 font-mono">
+                TOEFL (?)
+              </h4>
+              <p className="text-gray-400 mt-4 font-mono">
+                I am looking for a english certification to take.
+              </p>
+              <p className="text-gray-400 mt-4 font-mono">
+                TOEFL is probably the best option.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Contact */}
-        <section className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20 mb-20">
+        <section id="contact" className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl mt-20 mb-20">
           <div className="text-right max-w-lg mb-8 md:mb-0">
             <h3 className="text-3xl font-bold text-gray-300 font-mono">
               Contact me
             </h3>
             <p className="text-lg text-gray-400 mt-6 font-mono">
-              I am interested in freelance opportunities. However, if you have
-              other request or question, do not hesitate to contact me.
+              I am open to new freelance opportunities. However, if you have any
+              other requests or questions, please do not hesitate to contact me!
+              =)
             </p>
           </div>
           <Link
@@ -317,6 +526,8 @@ export default function Home() {
           <p className="text-gray-400 text-sm font-mono px-4">
             Copyright © {new Date().getFullYear()} Made by matheusdpo
           </p>
+
+          <p className="text-gray-400 text-sm font-mono px-4">Version SNAPSHOT-1.0.0</p>
         </footer>
       </div>
     </main>
