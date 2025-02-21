@@ -181,12 +181,11 @@ export default function Home() {
                 SysXL
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
-                Sistema feito em Java e JavaFX para capturar informacoes do
-                banco de dados via JDBC e retornar em excel utilizando Apache
-                POI.
+                System built in Java and JavaFX to capture information from the
+                database via JDBC and return it in Excel using Apache POI.
               </p>
               <p className="text-gray-400 mt-4 font-mono">
-                Software feito para:<br></br>{" "}
+                Software developed for:<br></br>{" "}
                 <a
                   href="http://www.dolomia.com.br"
                   target="_blank"
@@ -212,9 +211,9 @@ export default function Home() {
                 API Read Docs OCR
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
-                Sistema feito em Java e Spring Boot para capturar informacoes de
-                documentos PDF ou imagens via OCR e retornar em JSON. <br></br>
-                Paises suportados: Brasil, EUA, Canada e Georgia.
+                System built in Java and Spring Boot to capture information from
+                PDF documents or images via OCR and return it in JSON. <br></br>
+                Supported countries: Brazil, USA, Canada, and Georgia.
               </p>
               <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
@@ -232,13 +231,12 @@ export default function Home() {
                 RDL01 - Rename Files
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
-                Software de Automacao feito em Java e Spring Boot para capturar
-                numero da nota fiscal de um documento, utilizando REGEX,
-                renomear arquivos com o numero da nota fiscal e mover para um
-                diretorio.
+                RPA built in Java and Spring Boot to capture the invoice number
+                from a document using REGEX, rename files with the invoice
+                number, and move them to a directory.
               </p>
               <p className="text-gray-400 mt- font-mono">
-                Software feito para:<br></br>{" "}
+                Software developed for:<br></br>{" "}
                 <a
                   href="http://www.dolomia.com.br"
                   target="_blank"
@@ -264,9 +262,9 @@ export default function Home() {
                 CertiFlow
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
-                Microsservico feito em Java e Spring Boot para capturar demandas
-                da fila do RabbitMQ e enviar para o RPA de emissao de
-                certificados de DCPOA e SIGSIF.
+                Microservice built in Java and Spring Boot to capture requests
+                from the RabbitMQ queue and send them to the RPA for issuing
+                DCPOA and SIGSIF certificates.
               </p>
               <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
@@ -292,8 +290,8 @@ export default function Home() {
                 FitTrack
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
-                Aplicativo mobile feito em React Native para rastrear atividades
-                fisicas na academia.
+                Mobile application built in React Native to track physical
+                activities in the gym.
               </p>
               <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
@@ -318,8 +316,7 @@ export default function Home() {
                 Autoinstall Linux
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
-                Script em shell para instalar automaticamente softwares no
-                Linux.
+                Shell script to automatically install software on Linux.
               </p>
               <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
@@ -344,7 +341,7 @@ export default function Home() {
                 API Convert Currencies
               </h4>
               <p className="text-gray-400 mt-4 font-mono">
-                API feita em Java e Spring Boot para converter moedas.
+                API built in Java and Spring Boot to convert currencies.
               </p>
               <div className="mt-6 flex space-x-4 mt-auto">
                 <Link
