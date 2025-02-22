@@ -3,7 +3,6 @@
 import Layout from "@/app/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
-import codeExample1 from "@/assets/1_picture.jpeg"; // Exemplo de imagem de código
 import sysxlScreenshot from "@/assets/1_picture.jpeg"; // Exemplo de screenshot do projeto
 
 export default function SysXLPage() {
